@@ -1,0 +1,16 @@
+<% provide(:title, 'Professionals') %>
+<div class="row">
+  <div class="col-md-8">
+    <h3>List of Professionals</h3>
+      <p>search function</p>
+      <ul class="users">
+        <% @professionals.each do |professional| %>
+          <li>
+            <%= gravatar_for professional, size: 52 %>
+            <%= link_to professional.name, professional %>
+            <p>more details</p>
+          </li>
+        <% end %>
+      </ul>
+  </div>
+</div>

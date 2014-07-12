@@ -1,0 +1,16 @@
+<% provide(:title, 'Teachers') %>
+<div class="row">
+  <div class="col-md-8">
+    <h3>List of Teachers</h3>
+      <p>search function</p>
+      <ul class="users">
+        <% @teachers.each do |teacher| %>
+          <li>
+            <%= gravatar_for teacher, size: 52 %>
+            <%= link_to teacher.name, teacher %>
+            <p>more details</p>
+          </li>
+        <% end %>
+      </ul>
+  </div>
+</div>

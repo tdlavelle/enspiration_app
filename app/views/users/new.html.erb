@@ -18,6 +18,12 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %>
 
+      <%= f.label :role %>
+      <%= f.radio_button :role, 'professional' %>
+      <%= f.label :role, 'Professional', :value => 'professional' %>
+      <%= f.radio_button :role, 'teacher' %>
+      <%= f.label :role, 'Teacher', :value => 'teacher' %>
+
       <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
