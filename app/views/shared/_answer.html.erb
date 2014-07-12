@@ -1,0 +1,6 @@
+<%= form_for(response.answers.build(user_id: current_user.id, question_id: @posed_question.id, response_id: response.id)) do |f| %>
+  <div><%= f.hidden_field :user_id %></div>
+  <div><%= f.hidden_field :question_id %></div>
+  <div><%= f.hidden_field :response_id %></div>
+  <%= f.submit response.content, class: "btn btn-large btn-primary" %>
+<% end %>

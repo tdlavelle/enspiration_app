@@ -1,0 +1,8 @@
+<h1>Questions</h1>
+<% if @questions.any? %>
+  <h3>Questions (<%= @questions.count %>)</h3>
+  <ol class="questions">
+    <%= render @questions %>
+  </ol>
+  <%= will_paginate @questions %>
+<% end %>

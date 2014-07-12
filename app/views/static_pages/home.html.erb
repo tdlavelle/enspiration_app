@@ -1,0 +1,33 @@
+<% if signed_in? %>
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Answer a Question</h3>
+      <section>
+        <%= render 'shared/answer_form' %>
+      </section>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Recent Questions</h3>
+      <ol class="questions">
+        <%= render @questions %>
+      </ol>
+    </div>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <h1>Inspire Us</h1>
+
+    <h2>
+      Brining Professionals into the Classroom
+    </h2>
+
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+  </div>
+<% end %>

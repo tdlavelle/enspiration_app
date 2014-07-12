@@ -1,0 +1,14 @@
+<section>
+  <h1>
+    <%= gravatar_for current_user %>
+    <%= current_user.name %><br>
+  </h1>
+</section>
+<section>
+  <h5>Questions: <%= current_user.questions.count %></h5>
+  <h5>Answers:   <%= current_user.answers.count %></h5>
+</section>
+<section>
+  <h3>Ask a question</h3>
+  <%= render 'shared/question_form' %>
+</section>

@@ -1,0 +1,18 @@
+<%= form_for(@new_question) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Ask new question..." %>
+  </div>
+
+  <div id="choices">
+    <h2>Choices</h2>
+    <%= f.fields_for :responses do |ff| %>
+      <div class="field">
+        <%= ff.text_area :content, placeholder: "Enter choice..." %>
+      </div>
+    <% end %>
+  </div>
+  <button type="button" class="add_choice_button">Add Choice</button>
+  <button type="button" class="delete_choice_button">Delete Choice</button>
+  <%= f.submit "Ask", class: "btn btn-large btn-primary" %>
+<% end %>

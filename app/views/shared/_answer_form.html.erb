@@ -1,0 +1,12 @@
+<% if @posed_question %>
+  <h4><%= @posed_question.user.name %> asks, </h4>
+  <h2><%= @posed_question.content %></h2>
+  <% @posed_question.responses.each do |response| %>
+    <%= render partial: 'shared/answer', locals: {response: response} %>
+  <% end %>
+  <span class="timestamp">
+    <%= @posed_question.user.name %> posted <%= time_ago_in_words(@posed_question.created_at) %> ago.
+  </span>
+<% else %>
+  <h2>No questions currently available</h2>
+<% end %>
