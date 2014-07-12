@@ -1,10 +1,7 @@
 <% if signed_in? %>
   <div class="row">
     <div class="col-md-12">
-      <h3>Answer a Question</h3>
-      <section>
-        <%= render 'shared/answer_form' %>
-      </section>
+      <h3>New Opportunities</h3>
     </div>
   </div>
   <div class="row">
@@ -14,10 +11,7 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <h3>Recent Questions</h3>
-      <ol class="questions">
-        <%= render @questions %>
-      </ol>
+      <h3>Recent Visits</h3>
     </div>
   </div>
 <% else %>

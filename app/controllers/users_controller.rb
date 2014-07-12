@@ -3,13 +3,19 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]  
   def show
     if signed_in?
-      @new_question = current_user.questions.build
-      3.times { @new_question.responses.build }
+
     end
     @user = User.find(params[:id])
-    @questions = @user.questions.paginate(page: params[:page])
   end
   
+  def professionals
+    @professionals = User.where("role = ?", 'professional')
+  end
+
+  def teachers
+    @teachers = User.where("role = ?", 'teacher')
+  end
+
   def new
     @user = User.new
   end
@@ -18,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to Quispr!"
+      flash[:success] = "Welcome to Inspire Us!"
       redirect_to @user
     else
       render 'new'
@@ -44,7 +50,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :role)
     end
 
     # Before filters
